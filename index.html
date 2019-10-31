@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Pokedex</title>
+    <script defer src="presenter.js"></script>
+    <script defer src="modal.js"></script>
+    <script defer src="views.js"></script>
+    <script defer src="views.js"></script>
+    <script defer src="router.js"></script>
+    <link type="image/x-icon" href="./favicon.ico">
+
+
+</head>
+
+<header>
+    <nav>
+        <select id="changer" onchange="router.changeDex()" name="chooseRegion">
+            <option selected value="kanto">Kanto</option>
+            <option value="yoto">Yoto</option>
+            <option value="hoen">Hoen</option>
+        </select>
+        <input autocomplete="off"  id="search" type="text" placeholder="Search..">
+        <h3>Pokedex v2 <img id="rottom" src="./rotomdex.png" width="7%" alt=""></h3>
+    </nav>
+</header>
+<main id="main">
+    <!-- <div class="pokemon" data-more-info="https://pokeapi.co/api/v2/pokemon/152/">
+        <a href="#">
+            <h3>Chikorita</h3><img src="https://img.pokemondb.net/sprites/x-y/normal/chikorita.png" alt="chikorita">
+            <p> #1</p>
+        </a>
+    </!--> 
+</main>
+</body>
+
+</html>
+
+<style>
+    html {
+        font-size: 100%;
+    }
+
+    header h3 {
+        margin: 0px;
+        text-align: center;
+        color: #ffffff;
+        font-size: 6rem;
+        
+    }
+
+    body {
+        background-color: #71a95a;
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    header{
+        background-color: #394a6d;
+        height: 15em;
+    }
+
+    main {
+        margin: 5em 20%;
+    }
+
+    #allPokes {
+        display: grid;
+        grid-template-columns: repeat(8,12.5%);  
+    }
+
+    .pokemon {
+        color: #eaebd8;
+        background-color: #71a95a;
+        margin: 1em 0.1em;
+        text-align: center;
+        transition: box-shadow .3s;
+        border: 1px solid #5d5d5d;
+    }
+
+    .pokemon img {
+        width: 40%;
+        height: auto;
+    }
+
+    .pokemon h3{
+        margin-top: 0px;
+        background-color: #445c3c;
+    }
+
+    .pokemon p{
+        margin-bottom: 0em;
+        color: #eaebd8;
+        background-color: #3a883a;
+    }
+
+    .pokemon:hover {
+        box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+</style>
