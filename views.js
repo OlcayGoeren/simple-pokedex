@@ -1,3 +1,5 @@
+"use strict"
+
 var helperViews = {
     createPokeBox: function(data,counter){
         let div = document.createElement("div");
@@ -27,3 +29,4 @@ const createDexView = {
         
     }
 }
+

@@ -33,37 +33,73 @@
     <div id="eintrag">
         <div id="frontback">
             <p>Sprites</p>
-                <img class="front" src="https://img.pokemondb.net/sprites/emerald/normal/charmander.png" alt="Charmander">
-                <img class="frontshiny" src="https://img.pokemondb.net/sprites/emerald/shiny/charmander.png" alt="Charmander">
-                <img class="back" src="https://img.pokemondb.net/sprites/emerald/back-normal/charmander.png" alt="Charmander">
-                <img class="backshiny" src="https://img.pokemondb.net/sprites/emerald/back-shiny/charmander.png" alt="Charmander">
-            </div>
+            <img class="front" src="https://img.pokemondb.net/sprites/emerald/normal/charmander.png" alt="Charmander">
+            <img class="frontshiny" src="https://img.pokemondb.net/sprites/emerald/shiny/charmander.png"
+                alt="Charmander">
+            <img class="back" src="https://img.pokemondb.net/sprites/emerald/back-normal/charmander.png"
+                alt="Charmander">
+            <img class="backshiny" src="https://img.pokemondb.net/sprites/emerald/back-shiny/charmander.png"
+                alt="Charmander">
+        </div>
 
         <div id="entwicklungen">
             <p>Entwicklungen</p>
             <div class="stufe1">
-                    <p> <i class="fas fa-long-arrow-alt-right"></i> 1</p>
-                    <a href="http://pokemondb.net/pokedex/charmander"><img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmander.png" alt="Charmander"></a>            </div>
+                <p> <i class="fas fa-long-arrow-alt-right"></i> 1</p>
+                <a href="http://pokemondb.net/pokedex/charmander"><img
+                        src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmander.png"
+                        alt="Charmander"></a>
+            </div>
             <div class="stufe2">
-                    <p> <i class="fas fa-long-arrow-alt-right"></i> 14</p>
-                    <a href="http://pokemondb.net/pokedex/charmeleon"><img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmeleon.png" alt="Charmeleon"></a>            </div>
+                <p> <i class="fas fa-long-arrow-alt-right"></i> 14</p>
+                <a href="http://pokemondb.net/pokedex/charmeleon"><img
+                        src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmeleon.png"
+                        alt="Charmeleon"></a>
+            </div>
             <div class="stufe3">
-                    <p> <i class="fas fa-long-arrow-alt-right"></i> 36</p>
-                    <a href="http://pokemondb.net/pokedex/charizard"><img src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charizard.png" alt="Charizard"></a>            </div>
+                <p> <i class="fas fa-long-arrow-alt-right"></i> 36</p>
+                <a href="http://pokemondb.net/pokedex/charizard"><img
+                        src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charizard.png" alt="Charizard"></a>
+            </div>
 
         </div>
 
         <div id="general">
+            <a href="https://pokeapi.co/api/v2/pokemon/4/">Hier</a>
             <div class="abbilities">
-                    <p>Abbilities</p>
+                <table style="width: 80%;">
+                    <tr>
+                        <th>Abbilities</th>
+                        <th>Versteckte Fähigkeit</th>
+                        <th> Explanation</th>
+                    </tr>
+                    <tr>
+                        <th>Solar-power</th>
+                        <th>Ja</th>
+                        <th> führt bei Sonnenschein in jeder Runde zu KP-Verlusten, erhöht aber den Spezial-Angriff.
+                        </th>
+                    </tr>
+                    <th>blaze</th>
+                    <th>Nein</th>
+                    <th>When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much
+                        regular damage.</th>
+                    <tr>
+
+                    </tr>
+                </table>
             </div>
             <div class="typeWeak">
-                    <p>Types</p>
-                    <p>Weaknesses</p>
+                <table>
+                    <tr>
+                        <td>types</td>
+                    </tr>
+                </table>
+                <p>Types</p>
+                <p>Weaknesses</p>
             </div>
             <div class="height">
-                    <p>height</p>
-                    <p>weight</p>
+                <p>height</p>
+                <p>weight</p>
             </div>
             <div class="stats">
                 <p>Stats</p>
@@ -85,30 +121,30 @@
 </html>
 
 <style>
-    #frontback{
+    #frontback {
         display: grid;
-        grid-template-columns: repeat(9,1fr);
+        grid-template-columns: repeat(9, 1fr);
         grid-template-areas: ". a . b . c . d .";
         align-items: start;
         padding: 2em 0px;
         border-bottom-style: solid;
     }
 
-    .front{
+    .front {
         grid-area: a;
 
     }
 
-    .frontshiny{
+    .frontshiny {
         grid-area: b;
 
     }
 
-    .back{
+    .back {
         grid-area: c;
     }
 
-    .backshiny{
+    .backshiny {
         grid-area: d;
     }
 
@@ -119,31 +155,46 @@
         grid-template-columns: repeat(9, 1fr);
         grid-template-areas:
             ". a . . b . . c ."
-            ;
+        ;
         align-items: start;
         padding: 1em 0;
     }
 
-    #entwicklungen img{
+    #entwicklungen img {
         padding-bottom: 18px;
     }
 
-    .stufe1{
+    .stufe1 {
         grid-area: a;
         justify-self: center;
     }
 
-    .stufe2{
+    .stufe2 {
         grid-area: b;
         justify-self: center;
     }
 
-    .stufe3{
+    .stufe3 {
         grid-area: c;
         justify-self: center;
     }
-    .test{
+
+    .test {
         grid-area: t;
+    }
+
+    table{
+        margin: 0 auto;
+    }
+
+    table,th,td {
+        border: 1px solid black;
+        
+    }
+
+    th,
+    td {
+        padding: 1em;
     }
 
     #entwicklungen p {
