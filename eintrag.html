@@ -31,50 +31,63 @@
 </header>
 <main id="main">
     <div id="eintrag">
-        <div id="frontback">
-            <p>Sprites</p>
-            <img class="front" src="https://img.pokemondb.net/sprites/emerald/normal/charmander.png" alt="Charmander">
-            <img class="frontshiny" src="https://img.pokemondb.net/sprites/emerald/shiny/charmander.png"
-                alt="Charmander">
-            <img class="back" src="https://img.pokemondb.net/sprites/emerald/back-normal/charmander.png"
-                alt="Charmander">
-            <img class="backshiny" src="https://img.pokemondb.net/sprites/emerald/back-shiny/charmander.png"
-                alt="Charmander">
+        <div id="name">
+            <h1>Glumanda #4</h1>
         </div>
-
+        <div id="sprites">
+            <div id="frontback">
+                <img class="front" src="https://img.pokemondb.net/sprites/emerald/normal/charmander.png"
+                    alt="Charmander">
+                <img class="frontshiny" src="https://img.pokemondb.net/sprites/emerald/shiny/charmander.png"
+                    alt="Charmander">
+                <img class="back" src="https://img.pokemondb.net/sprites/emerald/back-normal/charmander.png"
+                    alt="Charmander">
+                <img class="backshiny" src="https://img.pokemondb.net/sprites/emerald/back-shiny/charmander.png"
+                    alt="Charmander">
+            </div>
+            <div class="type">
+                <img src="./pics/types/fire.jpg" width="8%" alt="feuertyp">
+            </div>
+        </div>
         <div id="entwicklungen">
-            <p>Entwicklungen</p>
-            <div class="stufe1">
-                <p> <i class="fas fa-long-arrow-alt-right"></i> 1</p>
-                <a href="http://pokemondb.net/pokedex/charmander"><img
-                        src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmander.png"
-                        alt="Charmander"></a>
+            <div class="sectionHeader">
+                <h1>Entwicklungen</h1>
             </div>
-            <div class="stufe2">
-                <p> <i class="fas fa-long-arrow-alt-right"></i> 14</p>
-                <a href="http://pokemondb.net/pokedex/charmeleon"><img
-                        src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmeleon.png"
-                        alt="Charmeleon"></a>
+            <div id="entwicklungsstufen">
+                <div class="stufe1">
+                    <p> <i class="fas fa-long-arrow-alt-right"></i> 1</p>
+                    <a href="http://pokemondb.net/pokedex/charmander"><img
+                            src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmander.png"
+                            alt="Charmander"></a>
+                </div>
+                <div class="stufe2">
+                    <p> <i class="fas fa-long-arrow-alt-right"></i> 14</p>
+                    <a href="http://pokemondb.net/pokedex/charmeleon"><img
+                            src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charmeleon.png"
+                            alt="Charmeleon"></a>
+                </div>
+                <div class="stufe3">
+                    <p> <i class="fas fa-long-arrow-alt-right"></i> 36</p>
+                    <a href="http://pokemondb.net/pokedex/charizard"><img
+                            src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charizard.png"
+                            alt="Charizard"></a>
+                </div>
             </div>
-            <div class="stufe3">
-                <p> <i class="fas fa-long-arrow-alt-right"></i> 36</p>
-                <a href="http://pokemondb.net/pokedex/charizard"><img
-                        src="https://img.pokemondb.net/sprites/ruby-sapphire/normal/charizard.png" alt="Charizard"></a>
-            </div>
-
         </div>
-
-        <div id="general">
-            <a href="https://pokeapi.co/api/v2/pokemon/4/">Hier</a>
+        <div id="faehigkeiten">
+            <div class="sectionHeader">
+                <h1>Fähigkeiten</h1>
+            </div>
+            <!-- <a href="https://pokeapi.co/api/v2/pokemon/4/">Hier</a> -->
             <div class="abbilities">
                 <table style="width: 80%;">
                     <tr>
-                        <th>Abbilities</th>
+                        <th>Name</th>
                         <th>Versteckte Fähigkeit</th>
                         <th> Explanation</th>
                     </tr>
                     <tr>
-                        <th>Solar-power</th>
+                        <th width="15%">Solar-power</th>
                         <th>Ja</th>
                         <th> führt bei Sonnenschein in jeder Runde zu KP-Verlusten, erhöht aber den Spezial-Angriff.
                         </th>
@@ -84,32 +97,100 @@
                     <th>When this Pokémon has 1/3 or less of its HP remaining, its fire-type moves inflict 1.5× as much
                         regular damage.</th>
                     <tr>
-
                     </tr>
                 </table>
             </div>
-            <div class="typeWeak">
-                <table>
-                    <tr>
-                        <td>types</td>
-                    </tr>
-                </table>
-                <p>Types</p>
-                <p>Weaknesses</p>
-            </div>
-            <div class="height">
-                <p>height</p>
-                <p>weight</p>
-            </div>
-            <div class="stats">
-                <p>Stats</p>
-            </div>
-            <div class="attacks">
-                <p>attacks</p>
-            </div>
-
         </div>
 
+        <div id="baseStats">
+            <div class="sectionHeader">
+                <h1>Basestats</h1>
+            </div>
+            <div class="stats">
+                <table>
+                    <tr>
+                        <td>KP</td>
+                        <td>
+                            <div class="stat">
+                                <div class="progress" style="width: 50%;">50%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Angriff</td>
+                        <td>
+                            <div class="stat">
+                                <div class="progress" style="width: 30%;">50%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Verteidigung</td>
+                        <td>
+                            <div class="stat">
+                                <div class="progress" style="width: 70%;">50%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Spezial‑Angriff</td>
+                        <td>
+                            <div class="stat">
+                                <div class="progress" style="width: 80%;">50%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Spezial‑Verteidigung</td>
+                        <td>
+                            <div class="stat">
+                                <div class="progress" style="width: 10%;">50%</div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Initiative</td>
+                        <td>
+                            <div class="stat">
+                                <div class="progress" style="width: 39%;">50%</div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="schwaeche">
+            <div class="sectionHeader">
+                <h1>Effektivität</h1>
+            </div>
+            <table>
+                <tr>
+                    <td>4-Fach Effektiv:</td>
+                    <td>---------------</td>
+                </tr>
+                <tr>
+                    <td>2-Fach Effektiv: </td>
+                    <td> 
+                        <img src="./pics/types/bug.jpg" alt="bug" width="5%">
+                        <img src="./pics/types/steel.jpg" alt="bug" width="5%"> 
+                        <img src="./pics/types/grass.jpg" alt="bug" width="5%">
+                        <img src="./pics/types/ic.jpg" alt="bug" width="5%">
+                    </td>
+                </tr>
+                <tr>
+                    <td>1/2-Fach Effektiv</td>
+                    <td>
+                        <img src="./pics/types/rock.jpg" width="5%" alt="rocksolid" srcset="">
+                        <img src="./pics/types/fire.jpg" width="5%" alt="rocksolid" srcset="">
+                        <img src="./pics/types/water.jpg" width="5%" alt="rocksolid" srcset="">
+                        <img src="./pics/types/dragon.jpg" width="5%" alt="rocksolid" srcset="">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
 
     </div>
 
@@ -121,13 +202,55 @@
 </html>
 
 <style>
+
+    #schwaeche table{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .stats {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .stat {
+        border-style: solid;
+        width: 40em;
+        height: 1.5em;
+        border-color: #ff4949;
+    }
+
+    .progress {
+        background-color: #ff4949;
+        height: 1.5em;
+        color: white;
+    }
+
+    #name {
+        background-color: #7c0a02;
+        height: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #name h1 {
+        color: #f4f9f4;
+
+    }
+
+    #sprites {
+        width: 95%;
+        margin: 0 auto;
+        margin-bottom: 1em;
+    }
+
     #frontback {
         display: grid;
         grid-template-columns: repeat(9, 1fr);
         grid-template-areas: ". a . b . c . d .";
         align-items: start;
         padding: 2em 0px;
-        border-bottom-style: solid;
     }
 
     .front {
@@ -149,8 +272,21 @@
     }
 
 
+    .sectionHeader {
+        background-color: white;
+        width: 95%;
+        height: 3em;
+        margin: 15px auto;
+        padding-top: 10px;
+        background-color: #7c0a02;
+    }
 
-    #entwicklungen {
+    .sectionHeader h1 {
+        color: white;
+        margin: 0px 15px;
+    }
+
+    #entwicklungsstufen {
         display: grid;
         grid-template-columns: repeat(9, 1fr);
         grid-template-areas:
@@ -160,7 +296,7 @@
         padding: 1em 0;
     }
 
-    #entwicklungen img {
+    #entwicklungsstufen img {
         padding-bottom: 18px;
     }
 
@@ -183,30 +319,27 @@
         grid-area: t;
     }
 
-    table{
+     table {
         margin: 0 auto;
+        border-collapse: collapse;
     }
 
-    table,th,td {
-        border: 1px solid black;
-        
+     table,th,td {
+        border-bottom: 1px solid #000;
     }
 
-    th,
-    td {
+     th,td {
         padding: 1em;
     }
 
-    #entwicklungen p {
+    #entwicklungsstufen p {
         padding-top: 5px;
         padding-bottom: 3px;
         margin: 0px;
         text-align: center;
     }
 
-
-
-    html {
+    #html {
         font-size: 100%;
     }
 
@@ -232,7 +365,7 @@
 
     main {
         margin: 5em 20%;
-        background-color: #5c8d89;
+        background-color: #f9f3ec;
     }
 
     #allPokes {
