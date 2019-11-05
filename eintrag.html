@@ -14,6 +14,7 @@
     <link type="image/x-icon" href="./favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/v4-shims.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
 
 
 </head>
@@ -32,28 +33,36 @@
 <main id="main">
     <div id="eintrag">
         <div id="name">
+            <button> <i class="fas fa-long-arrow-alt-left fa-2x"></i> </button>
             <h1>Glumanda #4</h1>
+            <span></span>
         </div>
-        <div id="sprites">
-            <div id="frontback">
-                <img class="front" src="https://img.pokemondb.net/sprites/emerald/normal/charmander.png"
-                    alt="Charmander">
-                <img class="frontshiny" src="https://img.pokemondb.net/sprites/emerald/shiny/charmander.png"
-                    alt="Charmander">
-                <img class="back" src="https://img.pokemondb.net/sprites/emerald/back-normal/charmander.png"
-                    alt="Charmander">
-                <img class="backshiny" src="https://img.pokemondb.net/sprites/emerald/back-shiny/charmander.png"
-                    alt="Charmander">
+        <div id="pokedexeintrag" class="maxBreite">
+            <div id="sprites">
+                <div id="frontback">
+                    <img class="front" src="https://img.pokemondb.net/sprites/emerald/normal/charmander.png"
+                        alt="Charmander">
+                    <img class="frontshiny" src="https://img.pokemondb.net/sprites/emerald/shiny/charmander.png"
+                        alt="Charmander">
+                    <img class="back" src="https://img.pokemondb.net/sprites/emerald/back-normal/charmander.png"
+                        alt="Charmander">
+                    <img class="backshiny" src="https://img.pokemondb.net/sprites/emerald/back-shiny/charmander.png"
+                        alt="Charmander">
+                </div>
+                <div class="type">
+                    <img src="./pics/types/fire.jpg" width="8%" alt="feuertyp">
+                </div>
             </div>
-            <div class="type">
-                <img src="./pics/types/fire.jpg" width="8%" alt="feuertyp">
+            <div class="informationseintrag">
+                <p> Die Flamme auf seiner Schweifspitze zeigt seine Gefühlslage an. Sie flackert, wenn GLUMANDA
+                    zufrieden ist. Wenn dieses Pokémon wütend wird, lodert die Flamme sehr stark.</p>
             </div>
         </div>
         <div id="entwicklungen">
             <div class="sectionHeader">
                 <h1>Entwicklungen</h1>
             </div>
-            <div id="entwicklungsstufen">
+            <div id="entwicklungsstufen" class="maxBreite">
                 <div class="stufe1">
                     <p> <i class="fas fa-long-arrow-alt-right"></i> 1</p>
                     <a href="http://pokemondb.net/pokedex/charmander"><img
@@ -78,8 +87,7 @@
             <div class="sectionHeader">
                 <h1>Fähigkeiten</h1>
             </div>
-            <!-- <a href="https://pokeapi.co/api/v2/pokemon/4/">Hier</a> -->
-            <div class="abbilities">
+            <div class="abbilities maxBreite">
                 <table style="width: 80%;">
                     <tr>
                         <th>Name</th>
@@ -106,7 +114,7 @@
             <div class="sectionHeader">
                 <h1>Basestats</h1>
             </div>
-            <div class="stats">
+            <div class="stats maxBreite">
                 <table>
                     <tr>
                         <td>KP</td>
@@ -164,16 +172,16 @@
             <div class="sectionHeader">
                 <h1>Effektivität</h1>
             </div>
-            <table>
+            <table class="maxBreite">
                 <tr>
                     <td>4-Fach Effektiv:</td>
                     <td>---------------</td>
                 </tr>
                 <tr>
                     <td>2-Fach Effektiv: </td>
-                    <td> 
+                    <td>
                         <img src="./pics/types/bug.jpg" alt="bug" width="5%">
-                        <img src="./pics/types/steel.jpg" alt="bug" width="5%"> 
+                        <img src="./pics/types/steel.jpg" alt="bug" width="5%">
                         <img src="./pics/types/grass.jpg" alt="bug" width="5%">
                         <img src="./pics/types/ic.jpg" alt="bug" width="5%">
                     </td>
@@ -189,7 +197,107 @@
                 </tr>
             </table>
         </div>
-        
+
+        <div id="attacken">
+            <div class="sectionHeader">
+                <h1>Attacken</h1>
+            </div>
+            <div class="alleAttacken maxBreite">
+                <div class="wieErlernbar">
+                    <h1>Erlernbare Attacken </h1>
+                    <i class="fas fa-chevron-down fa-2x"></i>
+                </div>
+
+                <table >
+                    <tr>
+                        <td>Level</td>
+                        <td>Attacke</td>
+                        <td>Typ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>Kratzer</td>
+                        <td><img src="./pics/types/normal.jpg" width="10%" alt="" srcset=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <td>Heuler</td>
+                        <td><img src="./pics/types/normal.jpg" width="10%" alt="" srcset=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Glut</td>
+                        <td><img src="./pics/types/fire.jpg" width="10%" alt="" srcset=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                </table>
+                <div class="wieErlernbar">
+                    <h1>Durch TM's erlernbare Attacken </h1>
+                    <i class="fas fa-chevron-down fa-2x"></i>
+                </div>
+
+                <table hidden>
+                    <tr>
+                        <td>TM/VM</td>
+                        <td>Attacke</td>
+                        <td>Typ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>TM01</td>
+                        <td>Kraftschub</td>
+                        <td><img src="./pics/types/normal.jpg" width="10%" alt=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                    <tr>
+                        <td>TM02</td>
+                        <td>Drachenklaue</td>
+                        <td><img src="./pics/types/dragon.jpg" width="10%" alt=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                    <tr>
+                        <td>TM06</td>
+                        <td>Toxin</td>
+                        <td><img src="./pics/types/poison.jpg" width="13%" alt=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                </table>
+                <div class="wieErlernbar">
+                    <h1>Durch Zucht erlernbare Attacken </h1>
+                    <i class="fas fa-chevron-down fa-2x"></i>
+                </div>
+
+                <table hidden>
+                    <tr>
+                        <td>Attacke</td>
+                        <td>Typ</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Antik-Kraft</td>
+                        <td><img src="./pics/types/rock.jpg" width="10%" alt=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                    <tr>
+                        <td>Bauchtrommel</td>
+                        <td><img src="./pics/types/normal.jpg" width="10%" alt=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+                    <tr>
+                        <td>Biss</td>
+                        <td><img src="./pics/types/dark.jpg" width="10%" alt=""></td>
+                        <td><button><i class="fas fa-angle-right"></i> </button></td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+
     </div>
 
     </div>
@@ -203,12 +311,65 @@
 
 <style>
 
-    #schwaeche table{
+    #name {
+        background-color: #7c0a02;
+        height: 120px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #f4f9f4;
+    }
+
+    #name button {
+        background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	outline: inherit;
+    }
+
+    #name i {
+        padding-left: 1em;
+
+    }
+
+    
+
+    #eintrag {
+        padding-bottom: 2em;
+    }
+
+    .wieErlernbar {
+        background-color: #b22222;
+        color: #ffffff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1em 0;
+        margin-top: 2em;
+    }
+
+    .wieErlernbar h1 {
+        padding-left: 1em;
+    }
+
+    .wieErlernbar i {
+        padding-top: 0.8em;
+        padding-right: 1em;
+    }
+
+    #name h1 {
+        font-family: 'Inconsolata', monospace;
+        font-size: 4em;
+    }
+
+    .maxBreite {
         width: 80%;
         margin: 0 auto;
     }
 
-    .stats {
+    #schwaeche table {
         width: 80%;
         margin: 0 auto;
     }
@@ -226,24 +387,6 @@
         color: white;
     }
 
-    #name {
-        background-color: #7c0a02;
-        height: 120px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #name h1 {
-        color: #f4f9f4;
-
-    }
-
-    #sprites {
-        width: 95%;
-        margin: 0 auto;
-        margin-bottom: 1em;
-    }
 
     #frontback {
         display: grid;
@@ -319,16 +462,19 @@
         grid-area: t;
     }
 
-     table {
+    table {
         margin: 0 auto;
         border-collapse: collapse;
     }
 
-     table,th,td {
+    table,
+    th,
+    td {
         border-bottom: 1px solid #000;
     }
 
-     th,td {
+    th,
+    td {
         padding: 1em;
     }
 

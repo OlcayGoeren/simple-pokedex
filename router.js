@@ -4,6 +4,7 @@ var routeMap = new Map();
 routeMap.set("kanto", presenter.kanto);
 routeMap.set("yoto", presenter.yoto);
 routeMap.set("hoen", presenter.hoen);
+routeMap.set("pokemon", presenter.pokeSite);
 
 var init = false;
 
@@ -12,6 +13,7 @@ var cache = [];
 var router = {
     navigateTo: (url) => {
         window.history.pushState(null, null, url);
+        // window.location.href = url;
     },
     changeDex: function () {
         let options = document.getElementById("changer");
@@ -27,26 +29,34 @@ if (window.location.pathname == '/') {
 }
 
 window.onpopstate = function (event) {
+    this.console.log("popp")
     let val = window.location.pathname.split("/")[1];
-    presenter[path]();
-    //TODO select updaten
+    this.console.log(val);
+    this.router.navigateTo(val);
 };
 
 
 var pushState = history.pushState;
 history.pushState = function () {
     pushState.apply(history, arguments);
-    routeMap.forEach((val, key, map) => {
-        if (arguments[2] == key) {
+
+    for (let [k, v] of routeMap) {
+        if (arguments[2].startsWith("pokemon/")) {
+           let actPokemon =window.location.href.split("/pokemon/")[1];
+            routeMap.get("pokemon")(actPokemon);
+            break;
+        } else if (arguments[2] == k) {
             let currentDex = document.getElementById('main').firstElementChild;
             routerHelper.pushCache(currentDex);
-            if (routerHelper.checkInCache(key)) {
-                presenter.reBuild(routerHelper.checkInCache(key));
+            if (routerHelper.checkInCache(k)) {
+                presenter.reBuild(routerHelper.checkInCache(k));
             } else {
-                val();
+                v();
             }
         }
-    });
+
+
+    }
 }
 
 var routerHelper = {

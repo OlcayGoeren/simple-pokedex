@@ -1,5 +1,11 @@
 "use strict"
 
+/**
+ * TODO:
+ * CSS clean uppen und in eine extra datei packen
+ * bei url change zu eintrag.html leiten
+ * eintrag html in js bauen :))
+ */
 
 var presenterHelper = {
     changeContent: function(div){
@@ -37,6 +43,14 @@ const presenter = {
         presenterHelper.changeContent(div);
         console.log("Ich bin nur noch hier")
     
+    },
+    pokeSite: function(pokemon){
+        let info = modal.reqPokemon(pokemon);
+        info.then(data => {
+            console.log(data);
+            let div =invPokemon.createPokemon(data);
+            presenterHelper.changeContent(div);
+        })
     }
 }
 
