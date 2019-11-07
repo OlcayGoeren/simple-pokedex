@@ -1,0 +1,13 @@
+#html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #71a95a;
+    margin: 0px;
+    padding: 0px;
+}
+
+main {
+    margin: 5em 20%;
+}

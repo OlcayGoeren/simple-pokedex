@@ -12,6 +12,15 @@ var helperViews = {
     makeFirstLetterCap: function(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     },
+    getRightLanguage: function(ary,language){
+        let newArray= [];
+        for ( let i=0; i<ary.length; i++){
+            if(ary[i].language.name == language){
+                newArray.push({text:ary[i].flavor_text, edition:ary[i].version.name })
+            }
+        }
+        return newArray;
+    }
 }
 
 const createDexView = {
@@ -51,13 +60,14 @@ const invPokemon = {
         main.appendChild(name);
         let pokedexEintrag = document.createElement("div");
         pokedexEintrag.id="pokedexeintrag";
+        pokedexEintrag.className="maxBreite"
         pokedexEintrag= this.createEintrag(pokedexEintrag, {types:data.types,name:data.name});
         main.appendChild(pokedexEintrag);
         return main;
-
-
         // let  entwicklungen = document.createElement("div");
         // entwicklungen.id="entwicklungen";
+        // main.appendChild(entwicklungen);
+        
         // let faehigkeiten = document.createElement("div");
         // faehigkeiten.id="faehigkeiten";
         // let baseStats = document.createElement("div");
@@ -94,31 +104,39 @@ const invPokemon = {
         sprites.appendChild(type);
         div.appendChild(sprites);
         return div;
+    },
+    createInfo: function(div,info){
+        let komprimiert =helperViews.getRightLanguage(info,"de");
+        let diashow = document.createElement("div");
+        diashow.className="slideshow-container";
     }
 }
 
 const eintragHelper = {
     setSprites: function(div, name){
-        console.log(animated.front_shiny+name+".gif");
+        name= name+".png";
         let front = document.createElement("img");
         front.className="front";
-        front.src= animated.front+name+".gif";
+        front.src= animated.front+name;
         let frontshiny = document.createElement("img");
         frontshiny.className="frontshiny";
-        frontshiny.src=animated.front_shiny+name+".gif";
+        frontshiny.src=animated.front_shiny+name;
         let back = document.createElement("img");
         back.className="back";
-        back.src=animated.back+name+".gif";
+        back.src=animated.back+name;
         let backshiny = document.createElement("img");
         backshiny.className="backshiny";
-        backshiny.src=animated.back_shiny+name+".gif";
+        backshiny.src=animated.back_shiny+name
         div.append(front,frontshiny,back,backshiny);
         return div;
     },
 
     setTypes: function(div, types){
-        types.forEach(type => {
-            console.log("heyyyyy")
+        types.forEach(data => {
+            let span = document.createElement("span");
+            span.innerHTML=helperViews.makeFirstLetterCap(data.type.name);
+            span.className=data.type.name;
+            div.append(span);
         })
 
     }

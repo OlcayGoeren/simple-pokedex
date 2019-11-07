@@ -50,6 +50,13 @@ const presenter = {
             console.log(data);
             let div =invPokemon.createPokemon(data);
             presenterHelper.changeContent(div);
+            console.log(data.species.url)
+            let species = modal.reqSpecies(data.species.url);
+            species.then(data => {
+                let evoChain = data.evolution_chain
+                let infoText = data.flavor_text_entries;
+                invPokemon.createInfo(div,infoText);
+            })
         })
     }
 }

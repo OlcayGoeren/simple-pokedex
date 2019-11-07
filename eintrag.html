@@ -50,12 +50,25 @@
                         alt="Charmander">
                 </div>
                 <div class="type">
-                    <img src="./pics/types/fire.jpg" width="8%" alt="feuertyp">
+                    <span class="fire">Feuer</span>
                 </div>
             </div>
-            <div class="informationseintrag">
-                <p> Die Flamme auf seiner Schweifspitze zeigt seine Gefühlslage an. Sie flackert, wenn GLUMANDA
-                    zufrieden ist. Wenn dieses Pokémon wütend wird, lodert die Flamme sehr stark.</p>
+            <div class="informationseintrag maxBreite">
+                <div class="edition">
+                            <p class="center">1.</p>
+                            <p class="center">2.</p>
+                            <p class="center">3.</p>
+                            <p class="center">4.</p>
+                            <p class="center">5.</p>
+                            <p class="center">6.</p>
+                            <p class="center">7.</p>
+                </div>
+                <div class="infotext">
+                        "Bisasam macht gern einmal ein Nickerchen im
+                        Sonnenschein. Auf seinem Rücken trägt es einen
+                        Samen. Indem es Sonnenstrahlen aufsaugt,
+                        wird er zunehmend größer."
+                </div>
             </div>
         </div>
         <div id="entwicklungen">
@@ -310,6 +323,50 @@
 </html>
 
 <style>
+
+    .center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .informationseintrag{
+        width: 80%;
+        background-color: #f2f4fb;
+        border-radius: 10px;
+    }
+
+    .edition{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+       
+    }
+
+    .edition p {
+        margin: 0;
+        margin-bottom: 15px;
+        border-style: solid;
+        cursor: pointer;
+        border-top: 0px;
+        border-right: 0px;
+        border-left: 0px;
+        border-color: #9b9fad;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+
+    .edition p:first-child{
+        border-left: 0px;
+    }
+
+    .edition p:hover {
+        border-bottom: 0px;
+        background-color: #5c636e;;
+    }
+
+    .infotext{
+        padding: 1em 2em;
+    }
 
     #name {
         background-color: #7c0a02;

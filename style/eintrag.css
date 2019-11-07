@@ -1,0 +1,177 @@
+#name {
+    background-color: #7c0a02;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f4f9f4;
+}
+
+#name button {
+    background: none;
+color: inherit;
+border: none;
+padding: 0;
+cursor: pointer;
+outline: inherit;
+}
+
+#name i {
+    padding-left: 1em;
+
+}
+
+#eintrag {
+    padding-bottom: 2em;
+    background-color: #f9f3ec;
+}
+
+.wieErlernbar {
+    background-color: #b22222;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em 0;
+    margin-top: 2em;
+}
+
+.wieErlernbar h1 {
+    padding-left: 1em;
+}
+
+.wieErlernbar i {
+    padding-top: 0.8em;
+    padding-right: 1em;
+}
+
+#name h1 {
+    font-family: 'Inconsolata', monospace;
+    font-size: 4em;
+}
+
+.maxBreite {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#schwaeche table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.maxBreite {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.stat {
+    border-style: solid;
+    width: 40em;
+    height: 1.5em;
+    border-color: #ff4949;
+}
+
+.progress {
+    background-color: #ff4949;
+    height: 1.5em;
+    color: white;
+}
+
+
+#frontback {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas: ". a . b . c . d .";
+    align-items: start;
+    padding: 2em 0px;
+}
+
+.front {
+    grid-area: a;
+
+}
+
+.frontshiny {
+    grid-area: b;
+
+}
+
+.back {
+    grid-area: c;
+}
+
+.backshiny {
+    grid-area: d;
+}
+
+
+.sectionHeader {
+    background-color: white;
+    width: 95%;
+    height: 3em;
+    margin: 15px auto;
+    padding-top: 10px;
+    background-color: #7c0a02;
+}
+
+.sectionHeader h1 {
+    color: white;
+    margin: 0px 15px;
+}
+
+#entwicklungsstufen {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas:
+        ". a . . b . . c ."
+    ;
+    align-items: start;
+    padding: 1em 0;
+}
+
+#entwicklungsstufen img {
+    padding-bottom: 18px;
+}
+
+.stufe1 {
+    grid-area: a;
+    justify-self: center;
+}
+
+.stufe2 {
+    grid-area: b;
+    justify-self: center;
+}
+
+.stufe3 {
+    grid-area: c;
+    justify-self: center;
+}
+
+.test {
+    grid-area: t;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border-bottom: 1px solid #000;
+}
+
+th,
+td {
+    padding: 1em;
+}
+
+#entwicklungsstufen p {
+    padding-top: 5px;
+    padding-bottom: 3px;
+    margin: 0px;
+    text-align: center;
+}

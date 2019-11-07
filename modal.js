@@ -9,10 +9,10 @@ const requestsForRegion = {
 var imgs = "https://img.pokemondb.net/sprites/ruby-sapphire/normal/";
 
 const animated = {
-    front: "https://img.pokemondb.net/sprites/black-white/anim/normal/",
-    front_shiny: "https://img.pokemondb.net/sprites/black-white/anim/shiny/",
-    back: "https://img.pokemondb.net/sprites/black-white/anim/back-normal/",
-    back_shiny: "https://img.pokemondb.net/sprites/black-white/anim/back-shiny/"
+    front: "https://img.pokemondb.net/sprites/black-white/normal/",
+    front_shiny: "https://img.pokemondb.net/sprites/black-white/shiny/",
+    back: "https://img.pokemondb.net/sprites/black-white/back-normal/",
+    back_shiny: "https://img.pokemondb.net/sprites/black-white/back-shiny/",
 };
 
 const local = {
@@ -62,7 +62,16 @@ const modal = {
               return value
         });
         return promiseB;
-
+    },
+    reqSpecies:function(url){
+        let promiseA =fetch(url)
+         .then(response => {
+             return response.json();
+         })
+         .catch(error => {
+            console.log(error);
+        });
+        return promiseA;
     }
 
 };

@@ -1,0 +1,38 @@
+#allPokes {
+    display: grid;
+    grid-template-columns: repeat(8, 12.5%);
+}
+
+.pokemon {
+    color: #eaebd8;
+    background-color: #71a95a;
+    margin: 1em 0.1em;
+    text-align: center;
+    transition: box-shadow .3s;
+    border: 1px solid #5d5d5d;
+}
+
+.pokemon img {
+    width: 40%;
+    height: auto;
+}
+
+.pokemon h3 {
+    margin-top: 0px;
+    background-color: #445c3c;
+}
+
+.pokemon p {
+    margin-bottom: 0em;
+    color: #eaebd8;
+    background-color: #3a883a;
+}
+
+.pokemon:hover {
+    box-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
