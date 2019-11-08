@@ -12,6 +12,13 @@
     border: 1px solid #5d5d5d;
 }
 
+.animation{
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
 .pokemon img {
     width: 40%;
     height: auto;

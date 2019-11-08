@@ -6,6 +6,8 @@ routeMap.set("yoto", presenter.yoto);
 routeMap.set("hoen", presenter.hoen);
 routeMap.set("pokemon", presenter.pokeSite);
 
+console.log("css von eintrag in mehere dateein auslagern")
+
 var init = false;
 
 var cache = [];

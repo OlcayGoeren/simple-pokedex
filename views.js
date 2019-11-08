@@ -108,7 +108,35 @@ const invPokemon = {
     createInfo: function(div,info){
         let komprimiert =helperViews.getRightLanguage(info,"de");
         let diashow = document.createElement("div");
-        diashow.className="slideshow-container";
+        diashow.className="informationseintrag maxBreite";
+        let edition = document.createElement("div");
+        edition.className="edition";
+        diashow.appendChild(edition);
+        let infotext = document.createElement("div");
+        infotext.className="infotext";
+        diashow.appendChild(infotext);
+        console.log(komprimiert)
+        edition.style.gridTemplateColumns ="repeat("+komprimiert.length+",1fr)";
+        for(let i=0; i<komprimiert.length; i++){
+            let p = document.createElement("p");
+            p.className="center";
+            p.innerHTML=komprimiert[i].edition;
+            p.dataset.num=i;
+            if(i==0){
+                p.classList.add("borderbottom0");
+            }
+            edition.appendChild(p);
+            let info= document.createElement("p");
+            info.className="infotext";
+            info.dataset.num=i;
+            info.innerHTML=komprimiert[i].text;
+            if(i!=0) {
+                info.hidden=true;                
+            }
+            infotext.appendChild(info);
+        }
+        eintragHelper.changeInfoEintrag(div);
+        div.appendChild(diashow);
     }
 }
 
@@ -139,6 +167,30 @@ const eintragHelper = {
             div.append(span);
         })
 
+    },
+    changeInfoEintrag: function(div){
+        div.addEventListener("click", function(event){
+            let path= event.path;
+            if(path[0].nodeName =="P"){
+                path[0].classList.add("borderbottom0")
+                let version =path[0].dataset.num;
+                let editions = div.querySelectorAll(".edition p");
+                let infos = div.querySelectorAll(".infotext p");
+                console.log(editions);
+                console.log(infos)
+                for(let i=0; i<infos.length;i++){
+                    if(infos[i].dataset.num == version){
+                        infos[i].hidden=false;
+                    }else{
+                        infos[i].hidden=true;
+                        if(editions[i].classList.contains("borderbottom0")){
+                            editions[i].classList.remove("borderbottom0")
+                        }
+                        
+                    }
+                }
+            }
+        })
     }
 }
 
