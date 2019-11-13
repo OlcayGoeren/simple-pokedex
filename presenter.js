@@ -41,21 +41,21 @@ const presenter = {
     },
     reBuild: function(div){
         presenterHelper.changeContent(div);
-        console.log("Ich bin nur noch hier")
-    
     },
     pokeSite: function(pokemon){
         let info = modal.reqPokemon(pokemon);
         info.then(data => {
-            console.log(data);
             let div =invPokemon.createPokemon(data);
             presenterHelper.changeContent(div);
-            console.log(data.species.url)
             let species = modal.reqSpecies(data.species.url);
             species.then(data => {
-                let evoChain = data.evolution_chain
                 let infoText = data.flavor_text_entries;
                 invPokemon.createInfo(div,infoText);
+                let evoPromise =modal.reqSpecies(data.evolution_chain.url);
+                evoPromise.then(data => {
+                    invPokemon.createEvoChain(div, data)
+                })
+                
             })
         })
     }

@@ -120,34 +120,15 @@ outline: inherit;
     margin: 0px 15px;
 }
 
-#entwicklungsstufen {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-areas:
-        ". a . . b . . c ."
-    ;
-    align-items: start;
-    padding: 1em 0;
+/* #entwicklungsstufen {
+   
+} */
+
+#entwicklungsstufen h3{
+    text-align: center;
 }
 
-#entwicklungsstufen img {
-    padding-bottom: 18px;
-}
 
-.stufe1 {
-    grid-area: a;
-    justify-self: center;
-}
-
-.stufe2 {
-    grid-area: b;
-    justify-self: center;
-}
-
-.stufe3 {
-    grid-area: c;
-    justify-self: center;
-}
 
 .test {
     grid-area: t;

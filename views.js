@@ -64,9 +64,6 @@ const invPokemon = {
         pokedexEintrag= this.createEintrag(pokedexEintrag, {types:data.types,name:data.name});
         main.appendChild(pokedexEintrag);
         return main;
-        // let  entwicklungen = document.createElement("div");
-        // entwicklungen.id="entwicklungen";
-        // main.appendChild(entwicklungen);
         
         // let faehigkeiten = document.createElement("div");
         // faehigkeiten.id="faehigkeiten";
@@ -115,7 +112,6 @@ const invPokemon = {
         let infotext = document.createElement("div");
         infotext.className="infotext";
         diashow.appendChild(infotext);
-        console.log(komprimiert)
         edition.style.gridTemplateColumns ="repeat("+komprimiert.length+",1fr)";
         for(let i=0; i<komprimiert.length; i++){
             let p = document.createElement("p");
@@ -137,6 +133,51 @@ const invPokemon = {
         }
         eintragHelper.changeInfoEintrag(div);
         div.appendChild(diashow);
+    },
+
+    createEvoChain: function(div,data){
+        let  entwicklungen = document.createElement("div");
+        entwicklungen.id="entwicklungen";
+        div.appendChild(entwicklungen);
+        let sectionHeader = document.createElement("div");
+        sectionHeader.className="sectionHeader";
+        sectionHeader.innerHTML="<h1>Entwicklungen</h1>"
+        entwicklungen.appendChild(sectionHeader);
+        let entwicklungsstufen= document.createElement("div");
+        entwicklungsstufen.id="entwicklungsstufen";
+        entwicklungen.appendChild(entwicklungsstufen);
+        let evoChain = evoChainHelper.getEvos(data);
+        console.log(evoChain);
+        if(evoChain.length==1){
+            let h3 = document.createElement("h3");
+            h3.innerHTML="Dieses Pokemon verfügt über keinen Entwicklungen";
+            entwicklungsstufen.appendChild(h3);
+        }else{
+            let table = document.createElement("table");
+            let row = document.createElement("tr");
+            entwicklungsstufen.appendChild(table);
+            table.appendChild(row);
+            for(let i=0; i<evoChain.length; i++){
+                let td = document.createElement("td");
+                let img = document.createElement("img");
+                img.src=imgs_entwicklung+evoChain[i].name+".png";
+                td.appendChild(img);
+                row.appendChild(td);
+                if(i<evoChain.length-1){
+                    let td2 = document.createElement("td");
+                    td2.innerHTML='<i class="fas fa-long-arrow-alt-right"></i>'
+                    row.appendChild(td2);
+                }
+                console.log(evoChain[i].detail)
+                // for(const prop in evoChain[i].detail){
+                //     if(evoChain[i].detail[prop] != null && evoChain[i].detail[prop] != false  ){
+                //         let p= document.createElement("p");
+                //         console.log( prop +": " +evoChain[i].detail[prop])
+                //     }
+                // }
+            }
+        }
+       
     }
 }
 
@@ -176,8 +217,6 @@ const eintragHelper = {
                 let version =path[0].dataset.num;
                 let editions = div.querySelectorAll(".edition p");
                 let infos = div.querySelectorAll(".infotext p");
-                console.log(editions);
-                console.log(infos)
                 for(let i=0; i<infos.length;i++){
                     if(infos[i].dataset.num == version){
                         infos[i].hidden=false;
@@ -194,3 +233,28 @@ const eintragHelper = {
     }
 }
 
+const evoChainHelper = {
+    getEvos: function(data){
+        let chains = data.chain;
+        let pokemonChain= [];
+        let firstStage = {name: chains.species.name}
+        pokemonChain.push(firstStage);
+        while(chains.hasOwnProperty("evolves_to")){
+            if(chains.evolves_to[0]!=null){
+                chains= chains.evolves_to[0];
+                let pokemonname= chains.species.name;
+                if(chains.evolution_details[0].length!=0){
+                    let evolutiondetail= chains.evolution_details[0];
+                    let newPoke= {name:pokemonname, detail:evolutiondetail};
+                    pokemonChain.push(newPoke);
+                }else{
+                    let newPoke = {name:pokemonname, detail:null};
+                    pokemonChain.push(newPoke);
+                }
+            }else{
+                break;
+            }
+        }
+        return pokemonChain;
+    }
+}

@@ -7,6 +7,7 @@ const requestsForRegion = {
     pokemon: "https://pokeapi.co/api/v2/pokemon/"
 };
 var imgs = "https://img.pokemondb.net/sprites/ruby-sapphire/normal/";
+var imgs_entwicklung= "https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/";
 
 const animated = {
     front: "https://img.pokemondb.net/sprites/black-white/normal/",
