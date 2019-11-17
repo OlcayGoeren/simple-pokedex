@@ -1,12 +1,5 @@
 "use strict"
 
-/**
- * TODO:
- * CSS clean uppen und in eine extra datei packen
- * bei url change zu eintrag.html leiten
- * eintrag html in js bauen :))
- */
-
 var presenterHelper = {
     changeContent: function(div){
         let main = document.getElementById("main");
@@ -43,6 +36,7 @@ const presenter = {
         presenterHelper.changeContent(div);
     },
     pokeSite: function(pokemon){
+        console.log("eyyy")
         let info = modal.reqPokemon(pokemon);
         info.then(data => {
             let div =invPokemon.createPokemon(data);
@@ -50,7 +44,8 @@ const presenter = {
             let species = modal.reqSpecies(data.species.url);
             species.then(data => {
                 let infoText = data.flavor_text_entries;
-                invPokemon.createInfo(div,infoText);
+                let eintraege =invPokemon.createInfo(infoText);
+                div.appendChild(eintraege);
                 let evoPromise =modal.reqSpecies(data.evolution_chain.url);
                 evoPromise.then(data => {
                     invPokemon.createEvoChain(div, data)

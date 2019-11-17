@@ -15,7 +15,6 @@ var cache = [];
 var router = {
     navigateTo: (url) => {
         window.history.pushState(null, null, url);
-        // window.location.href = url;
     },
     changeDex: function () {
         let options = document.getElementById("changer");
@@ -41,9 +40,10 @@ window.onpopstate = function (event) {
 var pushState = history.pushState;
 history.pushState = function () {
     pushState.apply(history, arguments);
-
     for (let [k, v] of routeMap) {
+        console.log(arguments);
         if (arguments[2].startsWith("pokemon/")) {
+            
            let actPokemon =window.location.href.split("/pokemon/")[1];
             routeMap.get("pokemon")(actPokemon);
             break;
