@@ -1,10 +1,10 @@
 span{
     border-radius: 10px;
-    color: #ffffff;
+    /* color: #ffffff; */
     font-size: 1em;
-    letter-spacing: 0.2em;
-    padding: 0.2em 0.5em;
-    margin: 0 0.5em;
+    /* letter-spacing: 0.2em; */
+    /* padding: 0.2em 0.5em; */
+    /* margin: 0 0.5em; */
 }
 .fire {
     background-color: #b22222;
@@ -18,7 +18,10 @@ span{
 .fairy{
     background-color: #ff78ae;
 }
-.fighting{
+.fighting {
+    background-color: #8f4426;
+}
+.fight {
     background-color: #8f4426;
 }
 .flying{
@@ -53,4 +56,11 @@ span{
 }
 .water{
     background-color: #4f81c7;
+}
+.bug{
+    background-color: #6b8c42;
+}
+.dark{
+    background-color: #2b0b0be8;
+}
 }

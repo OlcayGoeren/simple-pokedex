@@ -73,6 +73,14 @@ const modal = {
             console.log(error);
         });
         return promiseA;
+    },
+    reqAttack: atk => {
+        let url = "https://pokeapi.co/api/v2/move/"+atk;
+        let promiseA = fetch(url)
+         .then(res => {
+             return res.json();
+         })
+         return promiseA;
     }
 
 };

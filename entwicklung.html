@@ -13,44 +13,43 @@
 <body>
 
     <div class="entwicklung">
-        <h1>Entwicklungen</h1>
 
-        <div class="en">
-            <table class="en">
-                <tr>
-                        <td>
-                            <div class="align">
-                                    <img src="https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/charmander.png"alt="">
-                                    <span>Glumanda</span>
-                            </div>
-                        </td>
-                        <td>
-                            <i class="fas fa-long-arrow-alt-right"></i>
-                        </td>
-                        <td>
-                                <div class="align">
-                            <img src="https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/charmeleon.png"
-                                alt="" srcset="">
-                            <span>Glutexo</span>
-                                </div>
-                        </td>
-                    
-                    <td> 
-                        <i class="fas fa-long-arrow-alt-right"></i> 
-                    </td>
-                    <td>
-                            <div class="align">
-                            <img src="https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/charizard.png"
-                                alt="" srcset="">
-                            <span>Glurak</span>
-                            </div>  
-                        
-                    </td>
-                </tr>
-            </table>
+        <div class="table3">
+            <!-- <div class="info">
+                    <span>Typ</span>
+                    <span>Attacken art</span>
+                    <span>Target</span>
+                    <span>Power</span>
+                    <span>AP</span>
+                    <span>ACC</span>
+                    <span>TM</span>
+                    <p>Das Pokemon nimmt anschwung und rammt es dann richtig ab!</p>
+                </div> -->
+            <div class="row">
+                <span>Level</span>
+                <span>Name</span>
+                <span>Weiter</span>
+
+            </div>
+            <div class="row">
+                <span>1</span>
+                <span>Kratzer</span>
+                <!-- <span><i class="fas fa-angle-right"></i></span> -->
+                <span>Weiter</span>
+            </div>
+            <div class="row">
+                <span>1</span>
+                <span>Tackle</span>
+                <span>Weiter</span>
+            </div>
+            <div class="row">
+                <span>1</span>
+                <span>Heuler</span>
+                <span>Weiter</span>
+            </div>
+
+
         </div>
-        <p>Glumanda entwickelt sich auf lvl 16 zu Glutexo</p>
-        <p>Glutexo entwickelt sich auf lvl 36 zu Glurak</p>
 
 
 
@@ -63,33 +62,63 @@
 </html>
 
 <style>
-    p{
-        text-align: center;
-    }
     body {
-        background-color: #4baea0;
+        background-color: #71a95a;
     }
+
 
     .entwicklung {
-        width: 80%;
+        width: 60%;
         height: 50%;
-        background-color: #f0c9c9;
+        background-color: #f9f3ec;
         margin: 0 auto;
     }
 
-    .en {
-        width: 50%;
+    .table3 {
+        width: 80%;
         margin: 0 auto;
+        padding: 10px 0;
+
     }
 
-    .align {
+    .row {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
-    td {
+    .row span {
+        padding: 1em 0;
+
+    }
+
+
+    .info {
+        /* color: white; */
+        background-color: #e5dfdf;
+        display: flex;
+        justify-content: space-between;
+        flex: 1 1 160px;
+        flex-wrap: wrap;
         padding: 1em;
 
+    }
+
+    .info span {
+        width: 30%;
+        /* margin: 0.5em 0.2em; */
+        padding: 0.3em 0;
+    }
+
+    .info p {
+        width: 100%;
+        margin: 0;
+        padding: 0.3em 0;
+    }
+
+    i:hover {
+        transition: 1s;
+        transform: rotate(90deg);
     }
 </style>

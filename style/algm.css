@@ -11,3 +11,7 @@ body {
 main {
     margin: 5em 20%;
 }
+
+i{
+    cursor: pointer;
+}

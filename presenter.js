@@ -7,6 +7,18 @@ var presenterHelper = {
             main.firstElementChild.remove();
         }
         document.getElementById("main").appendChild(div);
+    },
+    getFaURL : function(data){
+        let newObj = [];
+        for (let i=0; i< data.length;i++){
+            newObj.push(data[i].ability.url)
+        }
+        return newObj;
+    },
+    eventAttack: function(atk,callback){
+        modal.reqAttack(atk).then(res => {
+            callback(res);
+        })
     }
 }
 
@@ -36,25 +48,35 @@ const presenter = {
         presenterHelper.changeContent(div);
     },
     pokeSite: function(pokemon){
-        console.log("eyyy")
+        let main = invPokemon.setMain();
         let info = modal.reqPokemon(pokemon);
         info.then(data => {
-            let div =invPokemon.createPokemon(data);
-            presenterHelper.changeContent(div);
+            invPokemon.createPokemon(data,main);
+            presenterHelper.changeContent(main);
+            window.scrollTo({ top: 300, behavior: 'smooth' });
             let species = modal.reqSpecies(data.species.url);
             species.then(data => {
                 let infoText = data.flavor_text_entries;
                 let eintraege =invPokemon.createInfo(infoText);
-                div.appendChild(eintraege);
+                main.querySelector("#pokedexeintrag").after(eintraege);
+
                 let evoPromise =modal.reqSpecies(data.evolution_chain.url);
                 evoPromise.then(data => {
-                    invPokemon.createEvoChain(div, data)
+                    invPokemon.createEvoChain(main, data)
+                })                
+            });
+            let abilities = data.abilities;
+            invPokemon.createFaehigkeit(abilities);
+            for(let i=0; i<abilities.length;i++){
+                let info =modal.reqSpecies(abilities[i].ability.url);
+                info.then(texts => {
+                    faehigkeitenHelper.findRightText("de",texts,i)
                 })
-                
-            })
-        })
+            }
+        });
     }
 }
+
 
 document.getElementById("search").addEventListener("input", function(e){
     let current = e.target.value.replace(/\s/g, '').toLowerCase();
@@ -69,6 +91,4 @@ document.getElementById("search").addEventListener("input", function(e){
             allPokes[i].hidden= false;
         }
     }
-    
-
 })

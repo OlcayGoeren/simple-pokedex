@@ -20,6 +20,7 @@ var router = {
         let options = document.getElementById("changer");
         let value = options.value;
         router.navigateTo(value);
+        document.title = helperViews.makeFirstLetterCap(value);
     }
 }
 
@@ -27,6 +28,7 @@ var router = {
 if (window.location.pathname == '/') {
     router.navigateTo("kanto");
     presenter.kanto();
+    document.title = helperViews.makeFirstLetterCap( document.getElementById("changer").value );
 }
 
 window.onpopstate = function (event) {
@@ -41,13 +43,8 @@ var pushState = history.pushState;
 history.pushState = function () {
     pushState.apply(history, arguments);
     for (let [k, v] of routeMap) {
-        console.log(arguments);
-        if (arguments[2].startsWith("pokemon/")) {
-            
-           let actPokemon =window.location.href.split("/pokemon/")[1];
-            routeMap.get("pokemon")(actPokemon);
-            break;
-        } else if (arguments[2] == k) {
+        if (arguments[2] == k) {
+            console.log("lak eyyyyyy")
             let currentDex = document.getElementById('main').firstElementChild;
             routerHelper.pushCache(currentDex);
             if (routerHelper.checkInCache(k)) {
@@ -56,9 +53,9 @@ history.pushState = function () {
                 v();
             }
         }
-
-
     }
+    let pokemon = window.location.pathname.split("/")[1];
+    routeMap.get("pokemon")(pokemon);   
 }
 
 var routerHelper = {
