@@ -221,7 +221,6 @@ const invPokemon = {
         let level_up = org.level_up;
         let tutor = org.tutor;
         let machine = org.machine;
-        //
         // dom setten
         div.appendChild(this.createSectionHeader("Attacken"));
         let allAttacks = document.createElement("div");
@@ -740,18 +739,36 @@ const attackenHelper = {
         }
 
         table.addEventListener("click", function (event) {
-            console.log("CREATE DIVVV")
             if (event.target.tagName == "BUTTON"){
-                event.target.firstElementChild.className+=" click"
-                let row = event.target.parentNode.parentNode;
+                if(event.target.firstElementChild.className.includes("click")){
+                    event.target.firstElementChild.classList.remove("click");
+                    event.target.firstElementChild.classList.add("minusClick");
+                }else{
+                    // event.target.firstElementChild.className+=" click"
+                    if(event.target.firstElementChild.className.includes("minusClick")){
+                        event.target.firstElementChild.classList.remove("minusClick");  
+                    }
+                    event.target.firstElementChild.classList.add("click");
+                    let row = event.target.parentNode.parentNode;
+                }
                 // createDiv
             }else if(event.target.tagName=="I") {
-                event.target.className+=" click"
-                let row = event.target.parentNode.parentNode.parentNode;
+                if(event.target.className.includes("click")){
+                    event.target.classList.remove("click");
+                    event.target.classList.add("minusClick");
+
+                }else{
+                    if(event.target.className.includes("minusClick")){
+                        event.target.classList.remove("minusClick");
+                    }
+                    // event.target.className+=" click"
+                    event.target.classList.add("click");
+                    // let row = event.target.parentNode.parentNode.parentNode;
+                }
                 // createDiv
             }
-
         })
+
                 // for (let i = 0; i < event.path.length; i++) {
                 //     if (event.path[i].tagName == "TR") {
                 //         let atk = event.path[i].querySelector(".styleName").innerHTML.toLowerCase();

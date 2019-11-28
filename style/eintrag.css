@@ -240,3 +240,8 @@ td {
     transition: 1s;
     transform: rotate(90deg);
 }
+
+.minusClick{
+    transition: 1s;
+    transform: rotate(0deg);
+}
