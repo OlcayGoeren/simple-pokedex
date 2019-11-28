@@ -1,110 +1,11 @@
-#name {
-    background-color: #7c0a02;
-    height: 120px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #f4f9f4;
-}
-
-#name button {
-    background: none;
-color: inherit;
-border: none;
-padding: 0;
-cursor: pointer;
-outline: inherit;
-}
-
-#name i {
-    padding-left: 1em;
-
-}
+/* ------ */
 
 #eintrag {
     padding-bottom: 2em;
     background-color: #f9f3ec;
 }
 
-.wieErlernbar {
-    background-color: #b22222;
-    color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 1em 0;
-    margin-top: 2em;
-}
-
-.wieErlernbar h1 {
-    padding-left: 1em;
-}
-
-.wieErlernbar i {
-    padding-top: 0.8em;
-    padding-right: 1em;
-}
-
-#name h1 {
-    font-family: 'Inconsolata', monospace;
-    font-size: 4em;
-}
-
-.maxBreite {
-    width: 80%;
-    margin: 0 auto;
-}
-
-#schwaeche table {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.maxBreite {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.stat {
-    border-style: solid;
-    width: 40em;
-    height: 1.5em;
-    border-color: #ff4949;
-}
-
-.progress {
-    background-color: #ff4949;
-    height: 1.5em;
-    color: white;
-}
-
-
-#frontback {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-areas: ". a . b . c . d .";
-    align-items: start;
-    padding: 2em 0px;
-}
-
-.front {
-    grid-area: a;
-
-}
-
-.frontshiny {
-    grid-area: b;
-
-}
-
-.back {
-    grid-area: c;
-}
-
-.backshiny {
-    grid-area: d;
-}
-
+/*  -------- */
 
 .sectionHeader {
     background-color: white;
@@ -119,64 +20,83 @@ outline: inherit;
     color: white;
     margin: 0px 15px;
 }
+/* ------ */
 
-#entwicklungsstufen {
-    width: 80%;
-    margin: 0 auto;
-   
+#name {
+    background-color: #7c0a02;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #f4f9f4;
 }
 
-#entwicklungsstufen table {
-    width: 50%;
+#name button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
 }
 
+#name i {
+    padding-left: 1em;
 
-#entwicklungsstufen h3{
-    text-align: center;
 }
 
-
-
-.test {
-    grid-area: t;
+#name h1 {
+    font-family: 'Inconsolata', monospace;
+    font-size: 4em;
 }
 
-table {
-    margin: 0 auto;
-    border-collapse: collapse;
+/*  ------- */
+
+#pokedexeintrag #frontback {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas: ". a . b . c . d .";
+    align-items: start;
+    padding: 2em 0px;
 }
 
+#pokedexeintrag #frontback .front {
+    grid-area: a;
 
-th,
-td {
-    padding: 1em;
 }
 
-#entwicklungsstufen p {
-    padding-bottom: 1em;
-    text-align: center;
+#pokedexeintrag #frontback .frontshiny {
+    grid-area: b;
+
 }
 
-.center{
+#pokedexeintrag #frontback .back {
+    grid-area: c;
+}
+
+#pokedexeintrag #frontback .backshiny {
+    grid-area: d;
+}
+
+/*  --------- */
+
+.informationseintrag{
+    background-color: #f2f4fb;
+    border-radius: 10px;
+}
+
+.informationseintrag .center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.informationseintrag{
-    margin: 1em auto;
-    /* width: 80%; */
-    background-color: #f2f4fb;
-    border-radius: 10px;
-}
-
-.edition{
+.informationseintrag .edition {
+    margin-top: 2em;
     display: grid;
-    /* grid-template-columns: repeat(7, 1fr); */
-   
 }
 
-.edition p {
+.informationseintrag .edition p {
     margin: 0;
     margin-bottom: 15px;
     border-style: solid;
@@ -189,59 +109,153 @@ td {
     padding-bottom: 0.5em;
 }
 
-.edition p:first-child{
+.informationseintrag .edition p:first-child {
     border-left: 0px;
 }
 
-.edition p:hover {
+.informationseintrag .edition p:hover {
     border-bottom: 0px;
-    background-color: #5c636e;;
+    background-color: #5c636e;
+    ;
 }
 
-.borderbottom0{
+.informationseintrag .infotext {
+    padding: 1em 2em;
+    margin-bottom: 2em;
+}
+
+.informationseintrag .borderbottom0 {
     border-bottom: 0;
 }
+/* ------ */
 
-.infotext{
-    padding: 1em 2em;
+#entwicklungsstufen {
+    width: 80%;
+    margin: 0 auto;
+
 }
+
+#entwicklungsstufen table {
+    width: 50%;
+}
+
+
+#entwicklungsstufen h3 {
+    text-align: center;
+}
+
+#entwicklungsstufen p {
+    padding-bottom: 1em;
+    text-align: center;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 1em;
+}
+
+/*
+
+Fähigkeiten HIER STYLEN
+
+*/
+
+/* Stautswerte hier stylen */
+
+
+
+#baseStats .stat {
+    border-style: solid;
+    width: 40rem;
+    height: 1.5em;
+    border-color: #ff4949;
+}
+
+#baseStats .progress {
+    background-color: #ff4949;
+    height: 1.5em;
+    color: white;
+}
+
+/* schwäche hier stylen  */
+
+#schwaeche table {
+    width: 80%;
+    margin: 0 auto;
+}
+/*  ******** */
+
+/* attacken hier stylen */
 
 #attacken tr {
     border-bottom-style: solid;
     border-color: rgba(0, 0, 0, 0.397);
 }
 
-.table {
+#attacken .wieErlernbar {
+    background-color: #b22222;
+    color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1em 0;
+    margin-top: 2em;
+}
+
+#attacken .wieErlernbar h1 {
+    padding-left: 1em;
+}
+
+#attacken .wieErlernbar i {
+    padding-top: 0.8em;
+    padding-right: 1em;
+}
+
+#attacken .table {
     width: 80%;
     margin: 0 auto;
     padding: 10px 0;
 }
-.row {
+
+#attacken .row {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 10px;
 }
-.row span{
+#attacken .row span {
     padding: 0.5em 0;
 
 }
 
-.first{
+#attacken .first {
     background-color: #f2f4fb;
 }
 
-.second{
+#attacken .second {
     background-color: #dedede;
 }
 
-.click{
+#attacken .click {
     transition: 1s;
     transform: rotate(90deg);
 }
 
-.minusClick{
+#attacken .minusClick {
     transition: 1s;
     transform: rotate(0deg);
 }
+
+
+/* helper */
+.maxBreite {
+    width: 80%;
+    margin: 0 auto;
+}
+

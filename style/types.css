@@ -1,10 +1,10 @@
-span{
+#type span{
     border-radius: 10px;
-    /* color: #ffffff; */
+    color: #ffffff;
     font-size: 1em;
-    /* letter-spacing: 0.2em; */
-    /* padding: 0.2em 0.5em; */
-    /* margin: 0 0.5em; */
+    letter-spacing: 0.2em; 
+    padding: 0.2em 0.5em;
+     margin: 0 0.5em;
 }
 .fire {
     background-color: #b22222;
