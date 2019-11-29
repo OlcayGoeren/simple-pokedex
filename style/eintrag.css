@@ -3,6 +3,11 @@
 #eintrag {
     padding-bottom: 2em;
     background-color: #f9f3ec;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#eintrag button:hover {
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 
 /*  -------- */
@@ -159,15 +164,35 @@ td {
     padding: 1em;
 }
 
-/*
+/* Fähigkeiten  */
 
-Fähigkeiten HIER STYLEN
+#faehigkeiten .row{
+    display: flex;
+    flex-wrap: row;
+    justify-content: center;
+    margin: 0.8em 0;
+}
 
-*/
+#faehigkeiten .name{
+    flex-basis: 10em
+}
+
+#faehigkeiten .versteckt{
+    flex-basis: 10em
+    
+}
+
+#faehigkeiten .versteckt{
+    flex-basis: 10em
+    
+}
+
+#faehigkeiten .info{
+    flex-basis: 10em
+}
+
 
 /* Stautswerte hier stylen */
-
-
 
 #baseStats .stat {
     border-style: solid;
@@ -182,12 +207,42 @@ Fähigkeiten HIER STYLEN
     color: white;
 }
 
+#baseStats .row{
+    display: flex;
+    margin: 2em 0;
+}
+#baseStats span {
+    flex-basis: 10em;
+}
+
+
+
 /* schwäche hier stylen  */
 
 #schwaeche table {
     width: 80%;
     margin: 0 auto;
 }
+.table3 {
+    width: 75%;
+    margin: 2em auto;
+    padding: 10px 20px;
+    background-color:#f2f4fb;
+    border-radius: 10px;
+}
+#schwaeche .row {
+    margin: 2em 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.multiplier{
+    width: 30px;
+    flex-basis: 10em;
+}
+
+
 /*  ******** */
 
 /* attacken hier stylen */

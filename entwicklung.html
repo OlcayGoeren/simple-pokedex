@@ -15,23 +15,31 @@
     <div class="entwicklung">
 
         <div class="table3">
-            <div class="row">
-                <span class="multi"> <strong>1/4x</strong> </span>
-                <span class="schwaechen">Fee Feuer Wasser Boden </span>
-            </div>
-            <div class="row">
-                <span class="multi">Multiplikator</span>
-                <span class="schwaechen">Fee Feuer Wasser Boden </span>
-            </div>
-            <div class="row">
-                <span class="multi">Multiplikator</span>
-                <span class="schwaechen">Fee Feuer Wasser Boden </span>
-            </div>
+           <div class="row">
+               <div class="name">
+                <span>Blaze</span>
+               </div>
+               <div class="versteckt">
+                <span>Versteckte Fähigkeit</span>
+               </div>
+               <div class="info">
+                   <span>Führt bei Sonnenschein in jeder Runde zu KP-Verlusten, erhöht aber den Spezial-Angriff.</span>
 
+               </div>
+           </div>
+           <div class="row">
+               <div class="name">
+                    <span>Solar-power</span>
+               </div>
+               <div class="versteckt">
+                   <span>Normale Fähigkeit</span>
 
-
-
-
+               </div>
+               <div class="info">
+                   <span>Erhöht die Stärke von Feuer-Attacken, wenn die KP auf einen gewissen Wert fallen.</span>
+                   
+               </div>
+           </div>
         </div>
 
 </body>
@@ -39,6 +47,8 @@
 </html>
 
 <style>
+
+
     body {
         background-color: #71a95a;
     }
@@ -60,11 +70,20 @@
     }
     .row {
         margin: 10px 0;
+        display: flex;
+        
+        flex-wrap: row;
     }
 
-    .multi{
-
-        margin-right: 50px;
-
+    .name{
+        flex-basis: 10em
     }
+
+    .versteckt{
+        flex-basis: 10em
+        
+    }
+
+
+
 </style>

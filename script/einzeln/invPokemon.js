@@ -107,76 +107,89 @@ const invPokemon = {
         entwicklungen.appendChild(sectionHeader);
         let evoChain = evoChainHelper.getEvos(data);
         let element = evoChainHelper.visualizeChain(evoChain);
-        entwicklungen.appendChild(element);
+        let table3 = document.createElement("div");
+        table3.className="table3";
+        table3.appendChild(element);
+        entwicklungen.appendChild(table3);
+
     },
     createFaehigkeit: function (abbilities) {
         let faehigkeiten = document.getElementById("faehigkeiten");
         let header = this.createSectionHeader("Fähigkeiten");
         faehigkeiten.appendChild(header);
         let abilitiesDiv = document.createElement("div");
-        abilitiesDiv.className = "abbilities maxBreite";
+        abilitiesDiv.className = "abbilities table3";
         faehigkeiten.appendChild(abilitiesDiv);
-        let table = document.createElement("table");
         for (let i = 0; i < abbilities.length; i++) {
-            let tr = document.createElement("tr");
-            table.appendChild(tr);
-            let name = document.createElement("td");
-            name.innerHTML = helperViews.makeFirstLetterCap(abbilities[i].ability.name);
+            let tr = document.createElement("div");
+            tr.className="row";
+            abilitiesDiv.appendChild(tr);
+            let name = document.createElement("div");
+            name.className="name";
+            let spanForName = document.createElement("span");
+            spanForName.innerHTML="<strong>"+ helperViews.makeFirstLetterCap(abbilities[i].ability.name)+"</strong>";
+            name.appendChild(spanForName);
             tr.appendChild(name);
-            let versteckt = document.createElement("td");
-            if (abbilities[i].is_hidden) versteckt.innerHTML = "Versteckte Fähigkeit"
-            else versteckt.innerHTML = "Normale Fähigkeit";
+
+            let versteckt = document.createElement("div");
+            versteckt.className="versteckt";
+            let spanForVersteckt = document.createElement("span");
+            versteckt.appendChild(spanForVersteckt);
+            if (abbilities[i].is_hidden) spanForVersteckt.innerHTML = "Versteckte Fähigkeit"
+            else spanForVersteckt.innerHTML = "Normale Fähigkeit";
             tr.appendChild(versteckt);
         }
-        abilitiesDiv.appendChild(table);
+
     },
     createStats: function (basestats, baseStats) {
 
         let header = this.createSectionHeader("Statuswerte");
         baseStats.appendChild(header);
         let stats = document.createElement("div");
-        stats.className = "stats maxBreite";
+        stats.className = "stats";
         baseStats.appendChild(stats);
-        let table = document.createElement("table");
+        let table = document.createElement("div");
+        table.className="table3";
         stats.appendChild(table);
         for (let i = 0; i < basestats.length; i++) {
-            let tr = document.createElement("tr");
-            let statname = document.createElement("td");
+            let tr = document.createElement("div");
+            tr.className="row";
+            let statname = document.createElement("span");
             table.appendChild(tr);
             tr.appendChild(statname);
             statname.innerHTML = helperViews.makeFirstLetterCap(basestats[i].stat.name);
-            let statbar = document.createElement("td");
-            tr.appendChild(statbar);
             let stat = document.createElement("div")
+            tr.appendChild(stat);
             stat.className = "stat";
-            statbar.appendChild(stat);
+            tr.appendChild(stat);
             let progress = document.createElement("div");
             progress.className = "progress";
             stat.appendChild(progress);
             let num = basestats[i].base_stat;
             let percent = (num * 100) / 150;
-
             progress.innerHTML += num;
             progress.style = "width: " + percent + "%";
-
         }
     },
     createSchwaeche: function (div, data) {
         let header = this.createSectionHeader("Schwächen");
         div.appendChild(header);
         let schwaeche = types.calculateWeakness(data);
-        let table = document.createElement("table");
+        let table = document.createElement("div");
+        table.className="table3";
         for (let prop in schwaeche) {
-            let tr = document.createElement("tr");
+            let tr = document.createElement("div");
+            tr.className="row";
             table.appendChild(tr);
-            let factor = document.createElement("td");
-            factor.innerHTML = prop;
+            let factor = document.createElement("span");
+            factor.className="multiplier";
+            factor.innerHTML ="<strong>"+types.translatetosimple[prop]+"x </strong>";
             tr.appendChild(factor);
             let obj = schwaeche[prop];
             for (let prop2 in obj) {
                 let type = document.createElement("span");
                 type.innerHTML = prop2;
-                type.className = prop2;
+                type.className = prop2+" weakTypes";
                 tr.appendChild(type);
             }
         }

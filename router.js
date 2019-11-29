@@ -4,6 +4,7 @@ var routeMap = new Map();
 routeMap.set("kanto", presenter.kanto);
 routeMap.set("yoto", presenter.yoto);
 routeMap.set("hoen", presenter.hoen);
+routeMap.set("sinnoh", presenter.sinnoh);
 routeMap.set("pokemon", presenter.pokeSite);
 
 console.log("css von eintrag in mehere dateein auslagern")

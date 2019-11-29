@@ -164,5 +164,12 @@ const types = {
             }
         }
         return newtype;
-    }
-}
+    },
+    translatetosimple: {
+        "fourfold": "4",
+        "double": "2",
+        "quarter":"1/4",
+        "half": "1/2",
+        "zero": "Immun",
+    },
+};

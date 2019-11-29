@@ -4,9 +4,10 @@ const requestsForRegion = {
     kanto: "https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151",
     yoto: "https://pokeapi.co/api/v2/pokemon/?offset=151&limit=100",
     hoen: "https://pokeapi.co/api/v2/pokemon/?offset=251&limit=135",
+    sinnoh: "https://pokeapi.co/api/v2/pokemon/?offset=386&limit=106",
     pokemon: "https://pokeapi.co/api/v2/pokemon/"
 };
-var imgs = "https://img.pokemondb.net/sprites/ruby-sapphire/normal/";
+var imgs = "https://img.pokemondb.net/sprites/black-white/normal/";
 var imgs_entwicklung= "https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/";
 
 const animated = {
@@ -14,10 +15,6 @@ const animated = {
     front_shiny: "https://img.pokemondb.net/sprites/black-white/shiny/",
     back: "https://img.pokemondb.net/sprites/black-white/back-normal/",
     back_shiny: "https://img.pokemondb.net/sprites/black-white/back-shiny/",
-};
-
-const local = {
-    types: "./pics/types/",
 };
 
 
@@ -55,6 +52,13 @@ const modal = {
         .catch(error => {
             console.log(error);
         }),
+    reqSinnoh: fetch(requestsForRegion.sinnoh)
+    .then(response => {
+        return response.json()
+    })
+    .catch(error => {
+        console.log(error);
+    }),
     reqPokemon: function (name) {
         let promiseA = modalHelper.getPokemon(name);
         let promiseB = Promise.resolve(promiseA);

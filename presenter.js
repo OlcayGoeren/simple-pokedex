@@ -44,6 +44,13 @@ const presenter = {
             presenterHelper.changeContent(newDiv);
         })
     },
+    sinnoh:function(){
+        let info = modal.reqSinnoh;
+        info.then(defs => {
+            let newDiv =createDexView.createRegion(defs, "sinnoh");
+            presenterHelper.changeContent(newDiv);
+        })
+    },
     reBuild: function(div){
         presenterHelper.changeContent(div);
     },
