@@ -25,6 +25,7 @@
     color: white;
     margin: 0px 15px;
 }
+
 /* ------ */
 
 #name {
@@ -85,7 +86,7 @@
 
 /*  --------- */
 
-.informationseintrag{
+.informationseintrag {
     background-color: #f2f4fb;
     border-radius: 10px;
 }
@@ -132,6 +133,7 @@
 .informationseintrag .borderbottom0 {
     border-bottom: 0;
 }
+
 /* ------ */
 
 #entwicklungsstufen {
@@ -164,30 +166,47 @@ td {
     padding: 1em;
 }
 
+#entwicklungen .row {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: row;
+    justify-content: center;
+}
+
+#entwicklungen .img {
+    flex-basis: 10em;
+}
+
+#entwicklungen .arrow {
+    flex-basis: 10em;
+    position: relative;
+    top: 3em;
+    left: 1.7em;
+}
+
+
 /* Fähigkeiten  */
 
-#faehigkeiten .row{
+#faehigkeiten .row {
     display: flex;
     flex-wrap: row;
     justify-content: center;
     margin: 0.8em 0;
 }
 
-#faehigkeiten .name{
+#faehigkeiten .name {
     flex-basis: 10em
 }
 
-#faehigkeiten .versteckt{
+#faehigkeiten .versteckt {
     flex-basis: 10em
-    
 }
 
-#faehigkeiten .versteckt{
+#faehigkeiten .versteckt {
     flex-basis: 10em
-    
 }
 
-#faehigkeiten .info{
+#faehigkeiten .info {
     flex-basis: 10em
 }
 
@@ -207,10 +226,11 @@ td {
     color: white;
 }
 
-#baseStats .row{
+#baseStats .row {
     display: flex;
     margin: 2em 0;
 }
+
 #baseStats span {
     flex-basis: 10em;
 }
@@ -223,13 +243,15 @@ td {
     width: 80%;
     margin: 0 auto;
 }
+
 .table3 {
     width: 75%;
     margin: 2em auto;
     padding: 10px 20px;
-    background-color:#f2f4fb;
+    background-color: #f2f4fb;
     border-radius: 10px;
 }
+
 #schwaeche .row {
     margin: 2em 0;
     display: flex;
@@ -237,7 +259,7 @@ td {
 }
 
 
-.multiplier{
+.multiplier {
     width: 30px;
     flex-basis: 10em;
 }
@@ -284,6 +306,7 @@ td {
     flex-wrap: wrap;
     padding: 10px;
 }
+
 #attacken .row span {
     padding: 0.5em 0;
 
@@ -314,3 +337,114 @@ td {
     margin: 0 auto;
 }
 
+
+@media only screen and (max-device-width: 480px) {
+
+    /*  Allgemein */
+
+    .sectionHeader {
+        width: 95%;
+        height: auto;
+        padding: 1em 0;
+    }
+
+    .sectionHeader h1 {
+        font-size: 2em;
+    }
+
+    /* 1. Block */
+    #name {
+        height: 8em;
+    }
+
+    #name h1 {
+        font-size: 3em;
+    }
+
+    #pokedexeintrag #frontback {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #frontback img {
+        width: 50%;
+    }
+
+    .edition p {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    /* Fähigkeiten */
+
+    #faehigkeiten .row {
+        flex-direction: column;
+        padding: 1.5em;
+    }
+
+    #faehigkeiten .name {
+        flex-basis: auto;
+        margin-top: 0.5em;
+    }
+
+    #faehigkeiten .versteckt {
+        flex-basis: auto;
+        margin-top: 0.5em;
+    }
+
+    #faehigkeiten .info {
+        flex-basis: auto;
+        margin-top: 0.5em;
+    }
+
+    /* Statuswerte */
+
+    #baseStats span {
+        flex-basis: 15em;
+    }
+
+    /* Schwächen */
+
+    #schwaeche .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .multiplier {
+        width: auto;
+
+    }
+
+    #schwaeche .multiplier {
+        flex-basis: 2em;
+    }
+
+    .allWeakDiv {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    /* Attacken */
+
+    .wieErlernbar h1 {
+        font-size: 2em;
+        /* font-size: auto; */
+    }
+
+    /* Entwicklung */
+
+    /* #entwicklungen .row{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #entwicklungen .img{
+        flex-basis: 25%;
+    }*/
+    #entwicklungen .arrow{
+        left: 0;
+    } 
+
+    #entwicklungen 
+}

@@ -1,5 +1,6 @@
 const createDexView = {
     createRegion: function (data, region) {
+        document.querySelector(".header").style="display:flex"
         let div = document.createElement('div');
         div.classList.add(region);
         div.id = "allPokes";

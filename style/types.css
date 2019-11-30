@@ -73,4 +73,8 @@
 .dark{
     background-color: #2b0b0be8;
 }
+@media only screen and (max-device-width: 480px){
+    .weakTypes{
+        margin-bottom: 0.3em;
+    }
 }

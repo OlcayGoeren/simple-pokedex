@@ -23,31 +23,10 @@ var presenterHelper = {
 }
 
 const presenter = {
-    yoto: function(){
-        let info = modal.reqYoto;
+    region: function(region){
+        let info = modal.reqRegion(region);
         info.then(defs => {
-            let newDiv =createDexView.createRegion(defs,"yoto");
-            presenterHelper.changeContent(newDiv);
-        })
-    },
-    kanto: function(){
-        let info = modal.reqKanto;
-        info.then(defs => {
-            let newDiv =createDexView.createRegion(defs,"kanto");
-            presenterHelper.changeContent(newDiv);
-        })
-    },
-    hoen: function(){
-        let info = modal.reqHoen;
-        info.then(defs => {
-            let newDiv =createDexView.createRegion(defs, "hoen");
-            presenterHelper.changeContent(newDiv);
-        })
-    },
-    sinnoh:function(){
-        let info = modal.reqSinnoh;
-        info.then(defs => {
-            let newDiv =createDexView.createRegion(defs, "sinnoh");
+            let newDiv =createDexView.createRegion(defs,region);
             presenterHelper.changeContent(newDiv);
         })
     },
@@ -60,7 +39,7 @@ const presenter = {
         info.then(data => {
             invPokemon.createPokemon(data,main);
             presenterHelper.changeContent(main);
-            window.scrollTo({ top: 300, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             let species = modal.reqSpecies(data.species.url);
             species.then(data => {
                 let infoText = data.flavor_text_entries;

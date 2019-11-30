@@ -1,11 +1,12 @@
 "use strict"
 
 var routeMap = new Map();
-routeMap.set("kanto", presenter.kanto);
-routeMap.set("yoto", presenter.yoto);
-routeMap.set("hoen", presenter.hoen);
-routeMap.set("sinnoh", presenter.sinnoh);
+// routeMap.set("kanto", presenter.kanto);
+// routeMap.set("yoto", presenter.yoto);
+// routeMap.set("hoen", presenter.hoen);
+// routeMap.set("sinnoh", presenter.sinnoh);
 routeMap.set("pokemon", presenter.pokeSite);
+routeMap.set("region", presenter.region);
 
 console.log("css von eintrag in mehere dateein auslagern")
 
@@ -28,8 +29,8 @@ var router = {
 
 if (window.location.pathname == '/') {
     router.navigateTo("kanto");
-    presenter.kanto();
-    document.title = helperViews.makeFirstLetterCap( document.getElementById("changer").value );
+    presenter.region("kanto");
+    document.title = helperViews.makeFirstLetterCap(document.getElementById("changer").value);
 }
 
 window.onpopstate = function (event) {
@@ -43,20 +44,21 @@ window.onpopstate = function (event) {
 var pushState = history.pushState;
 history.pushState = function () {
     pushState.apply(history, arguments);
-    for (let [k, v] of routeMap) {
-        if (arguments[2] == k) {
-            console.log("lak eyyyyyy")
-            let currentDex = document.getElementById('main').firstElementChild;
-            routerHelper.pushCache(currentDex);
-            if (routerHelper.checkInCache(k)) {
-                presenter.reBuild(routerHelper.checkInCache(k));
-            } else {
-                v();
-            }
+    if (arguments[2] == "kanto" || arguments[2] == "yoto" || arguments[2] == "hoen" || arguments[2] == "sinnoh"|| arguments[2] == "einall"|| arguments[2] == "kalos") {
+        let region = arguments[2];
+        let currentDex = document.getElementById('main').firstElementChild;
+        routerHelper.pushCache(currentDex);
+        if (routerHelper.checkInCache(region)) {
+            presenter.reBuild(routerHelper.checkInCache(region));
+            return;
+        } else {
+            routeMap.get("region")(region);
+            console.log("ich bin im else zweig von router")
+            return;
         }
     }
     let pokemon = window.location.pathname.split("/")[1];
-    routeMap.get("pokemon")(pokemon);   
+    routeMap.get("pokemon")(pokemon);
 }
 
 var routerHelper = {

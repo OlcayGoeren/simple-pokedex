@@ -35,8 +35,8 @@ const invPokemon = {
         sectionHeader.innerHTML = "<h1>" + title + "</h1>"
         return sectionHeader;
     },
-
     createPokemon: function (data, main) {
+        document.querySelector(".header").style="display:none"
         let name = main.querySelector("#name");
         this.createName(name, {
             index: data.game_indices[0].game_index,
@@ -108,7 +108,7 @@ const invPokemon = {
         let evoChain = evoChainHelper.getEvos(data);
         let element = evoChainHelper.visualizeChain(evoChain);
         let table3 = document.createElement("div");
-        table3.className="table3";
+        table3.className = "table3";
         table3.appendChild(element);
         entwicklungen.appendChild(table3);
 
@@ -122,17 +122,17 @@ const invPokemon = {
         faehigkeiten.appendChild(abilitiesDiv);
         for (let i = 0; i < abbilities.length; i++) {
             let tr = document.createElement("div");
-            tr.className="row";
+            tr.className = "row";
             abilitiesDiv.appendChild(tr);
             let name = document.createElement("div");
-            name.className="name";
+            name.className = "name";
             let spanForName = document.createElement("span");
-            spanForName.innerHTML="<strong>"+ helperViews.makeFirstLetterCap(abbilities[i].ability.name)+"</strong>";
+            spanForName.innerHTML = "<strong>" + helperViews.makeFirstLetterCap(abbilities[i].ability.name) + "</strong>";
             name.appendChild(spanForName);
             tr.appendChild(name);
 
             let versteckt = document.createElement("div");
-            versteckt.className="versteckt";
+            versteckt.className = "versteckt";
             let spanForVersteckt = document.createElement("span");
             versteckt.appendChild(spanForVersteckt);
             if (abbilities[i].is_hidden) spanForVersteckt.innerHTML = "Versteckte Fähigkeit"
@@ -149,11 +149,11 @@ const invPokemon = {
         stats.className = "stats";
         baseStats.appendChild(stats);
         let table = document.createElement("div");
-        table.className="table3";
+        table.className = "table3";
         stats.appendChild(table);
         for (let i = 0; i < basestats.length; i++) {
             let tr = document.createElement("div");
-            tr.className="row";
+            tr.className = "row";
             let statname = document.createElement("span");
             table.appendChild(tr);
             tr.appendChild(statname);
@@ -176,22 +176,25 @@ const invPokemon = {
         div.appendChild(header);
         let schwaeche = types.calculateWeakness(data);
         let table = document.createElement("div");
-        table.className="table3";
+        table.className = "table3";
         for (let prop in schwaeche) {
             let tr = document.createElement("div");
-            tr.className="row";
+            tr.className = "row";
             table.appendChild(tr);
             let factor = document.createElement("span");
-            factor.className="multiplier";
-            factor.innerHTML ="<strong>"+types.translatetosimple[prop]+"x </strong>";
+            factor.className = "multiplier";
+            factor.innerHTML = "<strong>" + types.translatetosimple[prop] + "x </strong>";
             tr.appendChild(factor);
             let obj = schwaeche[prop];
+            let allWeakDiv = document.createElement("div");
             for (let prop2 in obj) {
                 let type = document.createElement("span");
                 type.innerHTML = prop2;
-                type.className = prop2+" weakTypes";
-                tr.appendChild(type);
+                type.className = prop2 + " weakTypes";
+                allWeakDiv.appendChild(type);
             }
+            tr.appendChild(allWeakDiv);
+            allWeakDiv.className = "allWeakDiv";
         }
         div.appendChild(table);
     },

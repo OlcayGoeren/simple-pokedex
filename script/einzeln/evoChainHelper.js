@@ -42,23 +42,39 @@ const evoChainHelper = {
         }
         let entwicklungsstufen = document.createElement("div");
         entwicklungsstufen.id = "entwicklungsstufen";
-        let table = document.createElement("table");
+        let table = document.createElement("div");
         entwicklungsstufen.appendChild(table);
         for (let i = 0; i < size; i++) {
-            let row = document.createElement("tr");
+            let row = document.createElement("div");
+            row.className = "row";
             table.appendChild(row);
             let chain = evoChain["stage" + i];
             for (let j = 0; j < chain.length; j++) {
-                this.setObereChain(j, chain[j], chain.length, row);
-                if (j != 0) {
-                    this.setEvoText(chain[j - 1], chain[j], table);
+                if (screen.width < 480) {
+                    if(j%2==0 && j!=0){
+                        let newRow = document.createElement("div");
+                        newRow.className="row check";
+                        table.appendChild(newRow);
+                        this.setObereChain(j, chain[j], chain.length, newRow,true);
+                    }else{
+                        this.setObereChain(j, chain[j], chain.length, row,true);
+                    }
+                    if (j!=0 ) {
+                        this.setEvoText(chain[j - 1], chain[j], table);
+                    }
+                } else {
+                    this.setObereChain(j, chain[j], chain.length, row);
+                    if (j != 0) {
+                        this.setEvoText(chain[j - 1], chain[j], table);
+                    }
                 }
             }
         }
         return entwicklungsstufen;
     },
-    setObereChain: function (j, pokemon, length, row) {
-        let td = document.createElement("td");
+    setObereChain: function (j, pokemon, length, row, mobile=false) {
+        let td = document.createElement("div");
+        td.className = "img";
         let img = document.createElement("img");
         let a = document.createElement("a");
         a.addEventListener("click", function (event) {
@@ -69,22 +85,34 @@ const evoChainHelper = {
         a.appendChild(img);
         td.appendChild(a);
         row.appendChild(td);
-        if (j < length - 1) {
-            let td2 = document.createElement("td");
-            td2.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
-            row.appendChild(td2);
+        if(mobile==true){
+            if(j==1&& length==3){
+            }else if (j < length - 1) {
+                let td2 = document.createElement("div");
+                td2.className = "arrow";
+                td2.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
+                row.appendChild(td2);
+            }
+        }else{
+            if (j < length - 1) {
+                let td2 = document.createElement("div");
+                td2.className = "arrow";
+                td2.innerHTML = '<i class="fas fa-long-arrow-alt-right"></i>'
+                row.appendChild(td2);
+            }
         }
+        
     },
     setEvoText: function (prePokemon, currentPokemon, table) {
         let trigger = currentPokemon.details[0].trigger.name;
         currentPokemon.details = helperViews.minimizeDetails(currentPokemon.details[0]);
-        let size = helperViews.getTakenSize(currentPokemon.details);
-        let row2 = document.createElement("tr");
-        let td2 = document.createElement("td");
+        let row2 = document.createElement("div");
+        row2.className = "row";
+        let td2 = document.createElement("div");
+        td2.className = "evoText";
         row2.appendChild(td2);
         let p = document.createElement("p");
         td2.appendChild(p);
-        td2.colSpan = "10";
         table.appendChild(row2);
         p.innerHTML = evolution_triggers.oneLiner(currentPokemon, prePokemon.name, trigger);
 
